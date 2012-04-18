@@ -18,7 +18,7 @@ FastStats currently supports the following rendering engines:
 
 In it's most basic form you simply pass a reference to your root displayObjectContainer. This can be your stage, or any generic sprite:
 
-	new FastStats(displayObjectContainer);
+	new FastStats(regularSprite);
 
 Starling is similar:
 
@@ -35,7 +35,7 @@ If you would like to hide the background, that is optional:
 If you would like to position the stats somewhere other than the top, use a Sprite as your root:
 
 	new FastStats(myContainerSprite);
-	mySprite.x = 100;
+	myContainerSprite.x = 100;
 
 FastStats also supports the ability to display the total SpriteCount for a scene, but you must update it manually from somewhere in your application. This way, we're not wasting CPU cycles trying to trace your sceneGraph:
 	
