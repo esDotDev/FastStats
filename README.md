@@ -1,6 +1,8 @@
 #Fast Stats
 
-Fast Stats is designed for benchmarking GPU Accelerated Flash content with as little performance impact as possible.
+Fast Stats is designed for benchmarking GPU Accelerated Flash content with as little performance impact as possible. 
+
+The core goal is to provide a Stats package which works with all major 2D rendering engines, so we no longer need to use different libs depending on the project.
 
 ![alt FastStats](https://github.com/esDotDev/FastStats/blob/master/screenshot/screen.png?raw=true)
 
