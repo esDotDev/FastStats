@@ -16,10 +16,13 @@ In it's most basic form you simply pass a reference to your root displayObjectCo
 
 	new FastStats(displayObjectContainer);
 
-*For Starling and ND2D, use the equivalent class:*
+* Starling is similar:
 
 	new FastStatsStarling(starlingSprite)
-	new FastStatsND2D(node2d
+
+* ND2D as well:
+
+	new FastStatsND2D(node2d);
 
 If you would like to hide the background, that is optional:
 
@@ -34,6 +37,5 @@ If you would like to position the stats somewhere other than the top, use a Spri
 FastStats also supports the ability to display the total SpriteCount for a scene, but you must inject it manually from somewhere in your application:
 	
 	FastStats.numChildren = 120;
-
 
 
