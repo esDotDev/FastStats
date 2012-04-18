@@ -4,9 +4,9 @@ Fast Stats is designed for benchmarking GPU Accelerated Flash content with as li
 
 ![alt FastStats](https://github.com/esDotDev/FastStats/blob/master/screenshot/screen.png?raw=true)
 
-Unlike other Stats packages, which rely on displayList, TextFields and Graphic's API, FastStats uses cached bitmapData's to render everything.
+Unlike other Stats packages, which rely on displayList, TextFields and Graphic's API, FastStats uses cached textures to render everything. This allows it to be easily optimized for GPU based rendering.
 
-FastStats currently supports the following rendering engine:
+FastStats currently supports the following rendering engines:
 
 * Native DisplayList
 * Starling
