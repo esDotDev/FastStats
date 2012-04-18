@@ -28,9 +28,13 @@ ND2D as well:
 
 	new FastStatsND2D(node2d);
 
+By default, FastStats will update itself every 1000ms, but this is customizeable:
+
+	new FastStats(stage, 500); //Update every 500ms instead
+
 If you would like to hide the background, that is optional:
 
-	new FastStats(stage, false);
+	new FastStats(stage, 1000, false);
 
 If you would like to position the stats somewhere other than the top, use a Sprite as your root:
 
@@ -46,6 +50,9 @@ If you would like to hide FastStats, use .visible:
 	var stats:FastStats = new FastStats(this);
 	fastStats.visible = false;
 
+You can also specify visibility as the 4th constructor arg:
+
+	new FastStats(this, 1000, true, false);
 
 Finally, FastStats exposes the current FPS through a static property, so you can use it get your FPS anywhere in your application.
 

@@ -44,9 +44,13 @@ package ca.esdot.stats
 		protected var memoryText:TextField;
 		
 		protected var showBg:Boolean;
+		protected var _visible:Boolean;
+		protected var interval:int;
 		
-		public function FastStats(root:DisplayObjectContainer, showBg:Boolean = true) {
+		public function FastStats(root:DisplayObjectContainer, interval:int = 1000, showBg:Boolean = true, isVisible:Boolean = true) {
 			this.showBg = showBg;
+			this._visible = isVisible;
+			this.interval = interval;
 			_root = root; 
 			init();
 		}
@@ -63,9 +67,10 @@ package ca.esdot.stats
 		
 		public static function get fps():int{ return _fps; }
 		
+		public function get visible():Boolean { return _visible; }
 		public function set visible(value:Boolean):void {
-			bg.visible = value;
-			statsCache.visible = value;
+			_visible = value;
+			updateStats();
 		}
 
 		protected function createChildren():void {
@@ -131,6 +136,7 @@ package ca.esdot.stats
 					_root.addChild(bg);
 				}
 			}
+			bg.visible = _visible;
 			bg.bitmapData = cache;
 		}
 		
@@ -143,6 +149,10 @@ package ca.esdot.stats
 				_root.addChild(statsCache);
 			}
 			statsCache.bitmapData = cache;
+			
+			bg.visible = _visible;
+			statsCache.visible = _visible;
+			
 			setSize(bg.width, bg.height);
 		}
 		
@@ -191,7 +201,7 @@ package ca.esdot.stats
 		
 		protected function onEnterFrame(event:*):void {
 			numTicks++;
-			if(getTimer() - lastUpdateTime > 1500){
+			if(getTimer() - lastUpdateTime > interval){
 				_fps = Math.round(numTicks / ((getTimer() - lastUpdateTime)/1000));
 				lastUpdateTime = getTimer();
 				updateStats();

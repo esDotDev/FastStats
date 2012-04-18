@@ -10,11 +10,11 @@ package ca.esdot.stats
 
 	public class FastStatsStarling extends FastStats
 	{
-		protected var starlingRoot:Sprite;
+		protected var starlingRoot:DisplayObjectContainer;
 		
-		public function FastStatsStarling(root:Sprite, showBg:Boolean=true){
+		public function FastStatsStarling(root:DisplayObjectContainer, interval:int = 1000, showBg:Boolean = true, isVisible:Boolean = true) {
 			starlingRoot = root;
-			super(null, showBg);
+			super(null, interval, showBg, isVisible);
 		}
 		
 		override protected function init():void {

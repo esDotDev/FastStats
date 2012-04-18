@@ -27,6 +27,7 @@ package
 		protected function onEnterFrame(event:Event):void {
 			if(!example){ return; }
 			example.step()
+				
 			FastStats.numChildren = stage.numChildren;
 		}
 		

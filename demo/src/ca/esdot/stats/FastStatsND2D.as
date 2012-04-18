@@ -13,9 +13,9 @@ package ca.esdot.stats
 	{
 		protected var nd2dRoot:Node2D;
 		
-		public function FastStatsND2D(root:Node2D, showBg:Boolean=true){
+		public function FastStatsND2D(root:Node2D, interval:int = 1000, showBg:Boolean = true, isVisible:Boolean = true) {
 			nd2dRoot = root;
-			super(null, showBg);
+			super(null, interval, showBg, isVisible);
 		}
 		
 		override protected function init():void {
