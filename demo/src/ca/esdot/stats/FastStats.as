@@ -25,6 +25,7 @@ package ca.esdot.stats
 		
 		protected var lastUpdateTime:int = 0;
 		protected var numTicks:int = 0;
+		
 		protected static var _fps:Number;
 		
 		protected var numbers:Array = [];

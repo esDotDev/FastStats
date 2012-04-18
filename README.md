@@ -34,12 +34,10 @@ If you would like to hide the background, that is optional:
 
 If you would like to position the stats somewhere other than the top, use a Sprite as your root:
 
-	var s:Sprite = new Sprite();
-	s.x = s.y = 200;
-	addChild(s);
-	new FastStats(s);
+	new FastStats(myContainerSprite);
+	mySprite.x = 100;
 
-FastStats also supports the ability to display the total SpriteCount for a scene, but you must inject it manually from somewhere in your application:
+FastStats also supports the ability to display the total SpriteCount for a scene, but you must update it manually from somewhere in your application. This way, we're not wasting CPU cycles trying to trace your sceneGraph:
 	
 	FastStats.numChildren = 120;
 
