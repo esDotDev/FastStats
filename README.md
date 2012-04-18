@@ -36,3 +36,4 @@ FastStats also supports the ability to display the total SpriteCount for a scene
 	FastStats.numChildren = 120;
 
 
+
