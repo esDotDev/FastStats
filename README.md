@@ -41,4 +41,12 @@ FastStats also supports the ability to display the total SpriteCount for a scene
 	
 	FastStats.numChildren = 120;
 
+If you would like to hide FastStats, use .visible:
+	
+	var stats:FastStats = new FastStats(this);
+	fastStats.visible = false;
 
+
+Finally, FastStats exposes the current FPS through a static property, so you can use it to measure performance in the background:
+
+	trace(FastStats.fps); 
