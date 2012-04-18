@@ -16,11 +16,11 @@ In it's most basic form you simply pass a reference to your root displayObjectCo
 
 	new FastStats(displayObjectContainer);
 
-* Starling is similar:
+Starling is similar:
 
 	new FastStatsStarling(starlingSprite)
 
-* ND2D as well:
+ND2D as well:
 
 	new FastStatsND2D(node2d);
 
