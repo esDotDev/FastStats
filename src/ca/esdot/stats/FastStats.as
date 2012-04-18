@@ -52,8 +52,8 @@ package ca.esdot.stats
 		
 		protected function init():void {
 			var root:DisplayObjectContainer = _root as DisplayObjectContainer;
-			if(root.stage){
-				_stage = root.stage;
+			if(root.stage || root is Stage){
+				_stage = (root is Stage)? root : root.stage;
 				onAddedToStage();
 			} else {
 				root.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage, false, 0, true);
@@ -71,9 +71,12 @@ package ca.esdot.stats
 			if(children){ return; }
 			//Add just a little style to the bg... why not :)
 			var bgData:BitmapData = new BitmapData(2, statsHeight, false, 0x3a3a3a);
-			bgData.setPixel(0, statsHeight-1, 0x535353);
-			bgData.setPixel(0, statsHeight-2, 0x282828);
-			bgData.setPixel(0, statsHeight-3, 0x535353);
+			bgData.setPixel(0, statsHeight-1, 0x535353); bgData.setPixel(1, statsHeight-1, 0x535353);
+			bgData.setPixel(0, statsHeight-2, 0x282828); bgData.setPixel(1, statsHeight-2, 0x282828);
+			bgData.setPixel(0, statsHeight-3, 0x535353); bgData.setPixel(1, statsHeight-3, 0x535353);
+			bgData.setPixel(0, 0, 0x535353); bgData.setPixel(1, 0, 0x535353);
+			bgData.setPixel(0, 1, 0x282828); bgData.setPixel(1, 1, 0x282828);
+			bgData.setPixel(0, 2, 0x535353); bgData.setPixel(1, 2, 0x282828);
 			renderBg(bgData);
 			
 			children = new Sprite();
