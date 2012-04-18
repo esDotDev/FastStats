@@ -47,6 +47,6 @@ If you would like to hide FastStats, use .visible:
 	fastStats.visible = false;
 
 
-Finally, FastStats exposes the current FPS through a static property, so you can use it to measure performance in the background:
+Finally, FastStats exposes the current FPS through a static property, so you can use it get your FPS anywhere in your application.
 
 	trace(FastStats.fps); 
