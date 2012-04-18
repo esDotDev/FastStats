@@ -16,11 +16,11 @@ In it's most basic form you simply pass a reference to your root displayObjectCo
 
 	new FastStats(displayObjectContainer);
 
-* Starling is similar:
+Starling is similar:
 
 	new FastStatsStarling(starlingSprite)
 
-* ND2D as well:
+ND2D as well:
 
 	new FastStatsND2D(node2d);
 
@@ -32,6 +32,7 @@ If you would like to position the stats somewhere other than the top, use a Spri
 
 	var s:Sprite = new Sprite();
 	s.x = s.y = 200;
+	addChild(s);
 	new FastStats(s);
 
 FastStats also supports the ability to display the total SpriteCount for a scene, but you must inject it manually from somewhere in your application:
